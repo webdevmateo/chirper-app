@@ -1,20 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
+import TweetsList from './tweetsList';
 
-class App extends Component {
+class App extends React.Component {
   componentDidMount() {
-    const {dispatch} = this.props;
+    const { dispatch } = this.props;
     dispatch(handleInitialData());
   }
 
   render() {
+    const { loading } = this.props;
     return (
       <div>
-        StarterCode
+        {loading === true ? <h3>Loading...</h3> : <TweetsList />}
       </div>
     )
   }
 }
 
-export default connect()(App);
+function mapStateToProps({ authedUser }) {
+  return {
+    loading: authedUser === null
+  }
+}
+
+export default connect(mapStateToProps)(App);
