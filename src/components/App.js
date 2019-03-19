@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
-import TweetsList from './tweetsList';
+import TweetsList from './TweetsList';
 
 class App extends React.Component {
   componentDidMount() {
