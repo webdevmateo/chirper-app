@@ -50,7 +50,9 @@ class Tweet extends React.Component {
             <span>{replies !== 0 && replies}</span>
             <button
               className='heart-button' onClick={this.handleLike}>
-              {hasLiked === true ? <TiHeartFullOutline color='#e0245e' className='tweet-icon'/> : <TiHeartOutline className='tweet-icon'/>}
+              {hasLiked === true
+                ? <TiHeartFullOutline color='#e0245e' className='tweet-icon'/>
+                : <TiHeartOutline className='tweet-icon'/>}
             </button>
             <span>{likes !== 0 && likes}</span>
           </div>

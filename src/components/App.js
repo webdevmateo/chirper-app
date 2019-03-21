@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
 import TweetsList from './TweetsList';
+import LoadingBar from 'react-redux-loading';
 
 class App extends React.Component {
   componentDidMount() {
@@ -13,7 +14,8 @@ class App extends React.Component {
     const { loading } = this.props;
     return (
       <div>
-        {loading === true ? <h3>Loading...</h3> : <TweetsList />}
+        <LoadingBar />
+        {loading === true ? null : <TweetsList />}
       </div>
     )
   }
