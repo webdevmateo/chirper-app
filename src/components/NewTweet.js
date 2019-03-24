@@ -7,9 +7,9 @@ class NewTweet extends React.Component {
 
   handleChange = (e) => {
     const text = e.target.value;
-    this.setState(() => ({
+    this.setState({
       text
-    }))
+    })
   }
 
   handleSubmit = (e) => {
@@ -17,13 +17,13 @@ class NewTweet extends React.Component {
 
     const { text } = this.state;
 
-    //todo: Add tweet text to store
+    //todo: Add Tweet to store
 
     console.log('New Tweet: ', text);
 
-    this.setState(() => ({
+    this.setState({
       text: ''
-    }))
+    })
   }
 
   render() {
@@ -38,8 +38,9 @@ class NewTweet extends React.Component {
 
     return (
       <div>
-        <h3 className='center'>Compose a Tweet</h3>
-        <form className='new-tweet'
+        <h3 className='center'>Compose New Tweet</h3>
+        <form
+          className='new-tweet'
           onSubmit={this.handleSubmit}
         >
           <textarea
