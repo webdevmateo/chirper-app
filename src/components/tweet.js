@@ -48,9 +48,12 @@ class Tweet extends React.Component {
             <span>{name}</span>
             <div>{formatDate(timestamp)}</div>
             {parent && (
-              <button className='replying-to'
+              <button
+                className='replying-to'
                 onClick={(e) => this.toParent(e, parent.id)}
-              >Replying to @{parent.author}</button>
+              >
+                Replying to @{parent.author}
+              </button>
             )}
             <p>{text}</p>
           </div>
@@ -61,7 +64,8 @@ class Tweet extends React.Component {
               className='heart-button' onClick={this.handleLike}>
               {hasLiked === true
                 ? <TiHeartFullOutline color='#e0245e' className='tweet-icon'/>
-                : <TiHeartOutline className='tweet-icon'/>}
+                : <TiHeartOutline className='tweet-icon'/>
+              }
             </button>
             <span>{likes !== 0 && likes}</span>
           </div>
@@ -77,7 +81,9 @@ function mapStateToProps({authedUser, users, tweets}, { id }) {
 
   return {
     authedUser,
-    tweet: tweet ? formatTweet(tweet, users[tweet.author], authedUser, parentTweet) : null
+    tweet: tweet
+    ? formatTweet(tweet, users[tweet.author], authedUser, parentTweet)
+    : null
   }
 }
 
