@@ -17,9 +17,8 @@ class NewTweet extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { text } = this.state;
-
     const { dispatch, id } = this.props;
+    const { text } = this.state;
 
     dispatch(handleAddTweet(text, id));
 
