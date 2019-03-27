@@ -34,7 +34,6 @@ export default function tweets (state = {}, action) {
           [action.tweet.id]: action.tweet,
           ...replyingTo
         }
-        
     default:
       return state;
   }

@@ -55,10 +55,10 @@ export function handleAddTweet(text, replyingTo) {
     .then((tweet) => {
       dispatch(addTweet(tweet));
     })
-    // .catch((e) => {
-    //   console.log('There was an error of type: ', e);
-    //   alert('There was an error adding the tweet.  Please try again');
-    // })
+    .catch((e) => {
+      console.log('There was an error of type: ', e);
+      alert('There was an error adding the tweet.  Please try again');
+    })
     .then(dispatch(hideLoading()));
   }
 }
